@@ -1,0 +1,18 @@
+const input = 'i am the very model of a modern major general'
+const vowels = ['a', 'e', 'i', 'o', 'u'];
+let resultArray = [];
+for(let inputIndex = 0; inputIndex < input.length; inputIndex++){
+  //console.log('input index = ' + input[inputIndex])
+  for(let vowelFinder = 0; vowelFinder < vowels.length; vowelFinder++){
+    if (input[inputIndex] === vowels[vowelFinder]){
+      if(input[inputIndex] === 'e'){
+        resultArray.push('ee')
+      }else if(input[inputIndex] === 'u'){
+        resultArray.push('uu')
+      }else{
+        resultArray.push(input[inputIndex])
+      }
+    }
+  }
+}
+console.log(resultArray)
