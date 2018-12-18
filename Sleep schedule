@@ -1,0 +1,59 @@
+const getSleepHours = day => {
+switch(day) {
+  case 0:
+    day = 'monday'
+    return (8);
+    break
+  case 1:
+    day = 'tuesday'
+    return 7;
+    break 
+  case 2:
+    day = 'wednesday'
+    return 7.6;
+    break
+  case 3:
+    day = 'thursday'
+    return 10;
+    break
+  case 4:
+    day = 'friday'
+    return 4;
+    break
+  case 5:
+    day = 'saturday'
+    return 9.4;
+    break
+  case 6:
+    day = 'sunday'
+    return 10;
+    break
+  default:
+    return 'error';
+    break
+}
+}
+/*
+console.log(getSleepHours(2))
+*/
+const getActualSleepHours = () => {
+  return getSleepHours(0) + getSleepHours(1) + getSleepHours(2) + getSleepHours(3) + getSleepHours(4) + getSleepHours(5) + getSleepHours(6) 
+  }
+//console.log(getActualSleepHours());
+const getIdealSleepHours = () => {
+  const idealHours = 8;
+  return idealHours * 7;
+}
+//console.log(getIdealSleepHours());
+const calculateSleepDebt = () => {
+  const actualSleepHours = Math.floor(getActualSleepHours())
+  const idealSleepHours = Math.floor(getIdealSleepHours())
+  if(actualSleepHours === idealSleepHours){
+    console.log('Right on Schedule!')
+  }else if (actualSleepHours > idealSleepHours){
+    console.log('Easy there Rip van Winkle, you slept ' + (actualSleepHours - idealSleepHours) + ' hours too long.' )
+  }else if (actualSleepHours < idealSleepHours){
+    console.log("Don't get too sleepy there buddy, you slept " + (idealSleepHours - actualSleepHours) + " too little." )
+  }
+  }
+calculateSleepDebt()
