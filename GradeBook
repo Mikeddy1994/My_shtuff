@@ -1,0 +1,41 @@
+const homeWorkGradeBook = [100, 97, 85, 87, 0, 0]
+
+const homeWorkTotal = homeWorkGradeBook.reduce((accumulator, currentValue) => {
+  //console.log('The value of accumulator: ', accumulator);
+  //console.log('The value of currentValue: ', currentValue);
+  return accumulator + currentValue;
+}, 0);
+ const averageHomeWorkGrade = (homeWorkTotal / homeWorkGradeBook.length)
+ const testGradeBook = [87, 95, 100]
+ 
+ const testGradeTotal = testGradeBook.reduce((accumulator, currentValue) => {
+   return accumulator + currentValue
+ }, 0)
+ const averageTestGrade = (testGradeTotal / testGradeBook.length)
+ 
+ const quizGradeBook = [98, 85, 76, 83, 65]
+  const quizGradeTotal = quizGradeBook.reduce((accumulator, currentValue) => {
+   return accumulator + currentValue
+ }, 0)
+ const averageQuizGrade = (quizGradeTotal / quizGradeBook.length)
+ 
+const testPercentage = (averageTestGrade * .3)
+const homeWorkPercentage = (averageHomeWorkGrade * .5)
+const quizPercentage = (averageQuizGrade * .1)
+const classParticipation = 10
+
+const finalGrade = (testPercentage + homeWorkPercentage + quizPercentage + classParticipation)
+
+ if(finalGrade > 90){
+   console.log('You have an A')
+ }else if(finalGrade < 90 && finalGrade > 80) {
+   console.log('You have a B')
+ }else if (finalGrade < 80 && finalGrade > 70){
+   console.log('You have a C')
+ }else if(finalGrade < 70 &&  finalGrade > 65){
+   console.log('You have a D')
+ }else{
+   console.log('You are failing my class')
+ }
+ console.log('you are averaging a ' + averageHomeWorkGrade + ' for your homework grade. You are averaging a ' + averageTestGrade + ' for your tests, and a ' + averageQuizGrade + ' for your Quizes')
+console.log('you have a ' + finalGrade + ' average')
